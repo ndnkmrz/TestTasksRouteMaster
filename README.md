@@ -1,15 +1,15 @@
 # TestTasksRouteMaster
 
 1. Logic
-- [Check if x is in the range]()
-- [Choose the right queue]()
-- [Matching a pattern]()
+- [Check if x is in the range](https://github.com/ndnkmrz/TestTasksRouteMaster/blob/main/src/main/java/org/example/RangeCheck.java)
+- [Choose the right queue](https://github.com/ndnkmrz/TestTasksRouteMaster/blob/main/src/main/java/org/example/RightQueue.java)
+- [Matching a pattern](https://github.com/ndnkmrz/TestTasksRouteMaster/blob/main/src/main/java/org/example/PatternMatch.java)
 2. XSLT
 - in progress
-3. [REST]()
+3. [REST](https://github.com/ndnkmrz/TestTasksRouteMaster/blob/main/src/main/rest/rest_tasks.md)
 - what is the error
 - HTTP response code
-4. [SQL]()
+4. [SQL](https://github.com/ndnkmrz/TestTasksRouteMaster/blob/main/src/main/sql/sql_tasks.md)
 - all toys in boxes
 - toys in each box
 - toys in all blue, red, etc boxes

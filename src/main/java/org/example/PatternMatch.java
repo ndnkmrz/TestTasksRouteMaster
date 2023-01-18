@@ -38,12 +38,6 @@ public class PatternMatch {
     }
 
     public String[] matchPattern(){
-        //AB-D3 2-4 AB??2?
-        //0. Проходим по элементам списка listOfRecords;
-        //1. Нужно удалить пробелы и черточки из элемента
-        //1.5 Проверяем, точно ли 6 символов в элементе
-        //2. Цикл с 0 по 5 элемент. Там, где нет вопросика, сравниваем с паттерном.
-        //3. Если все сравнения успешны, добавляем в конечный список
         String[] resultArray = new String[] {};
         for (var checkString : listOfRecords) {
             int i = 0;
