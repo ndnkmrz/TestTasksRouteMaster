@@ -15,7 +15,7 @@ public class Main {
         xslt.ReadFile();
         xslt.getNodeList("/objects/object[1]");
         xslt.getNodeList("/objects/object[property='green']/@id");
-        xslt.getNodeList("/objects/object[property='green']/string-join(@id, ', ')");
+        //xslt.getNodeList("/objects/object[property='green']/string-join(@id, ', ')");
 
         System.out.println("Hi");
     }
