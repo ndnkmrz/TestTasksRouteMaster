@@ -5,7 +5,11 @@
 - [Choose the right queue](https://github.com/ndnkmrz/TestTasksRouteMaster/blob/main/src/main/java/org/example/RightQueue.java)
 - [Matching a pattern](https://github.com/ndnkmrz/TestTasksRouteMaster/blob/main/src/main/java/org/example/PatternMatch.java)
 2. XSLT
-- in progress
+- [Xpaths]()
+- [Storage hierarchy]()
+- [Transform CSV to XML]()
+- [Create 2 lists]()
+- [Transform XML to JSON]()
 3. [REST](https://github.com/ndnkmrz/TestTasksRouteMaster/blob/main/src/main/rest/rest_tasks.md)
 - what is the error
 - HTTP response code
@@ -14,4 +18,5 @@
 - toys in each box
 - toys in all blue, red, etc boxes
 5. Routes
-- in progress
+- [Explain the route]()
+- [Change the route]()

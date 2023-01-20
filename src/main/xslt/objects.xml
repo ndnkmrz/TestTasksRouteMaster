@@ -1,0 +1,37 @@
+<objects>
+	<object>
+		<id>1</id>
+		<name>object1</name>
+		<active>true</active>
+		<nestedObjects>
+			<object>
+				<id>2</id>
+				<name>object2</name>
+				<active>false</active>
+			</object>
+			<object>
+				<id>3</id>
+				<name>object3</name>
+				<active>true</active>
+			</object>
+		</nestedObjects>
+	</object>
+	<object>
+		<id>4</id>
+		<name>object4</name>
+		<active>true</active>
+		<nestedObjects>
+			<object>
+				<id>5</id>
+				<name>object5</name>
+				<active>true</active>
+			</object>
+		</nestedObjects>
+	</object>
+	<object>
+		<id>6</id>
+		<name>object6</name>
+		<active>false</active>
+		<nestedObjects/>
+	</object>
+</objects>

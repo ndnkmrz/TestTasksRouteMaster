@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects>
+	<object type="box" id="bx1">
+		<property name="longSide">20</property>
+		<property name="shortSide">20</property>
+		<property name="color">red</property>
+	</object>
+	<object type="box" id="bx11">
+		<property name="longSide">30</property>
+		<property name="shortSide">30</property>
+		<property name="color">black</property>
+	</object>
+	<object type="box" id="bx2">
+		<property name="longSide">10</property>
+		<property name="shortSide">15</property>
+		<property name="color">green</property>
+		<reference name="storedIn" id="bx1"/>
+	</object>
+	<object type="box" id="bx3">
+		<property name="longSide">2</property>
+		<property name="shortSide">1</property>
+		<property name="color">light-green</property>
+		<reference name="storedIn" id="bx2"/>
+	</object>
+	<object type="box" id="bx4">
+		<property name="longSide">1</property>
+		<property name="shortSide">2</property>
+		<property name="color">blue</property>
+		<reference name="storedIn" id="bx2"/>
+	</object>
+	<object type="box" id="bx5">
+		<property name="longSide">5</property>
+		<property name="shortSide">4</property>
+		<property name="color">octarine</property>
+		<reference name="storedIn" id="bx1"/>
+	</object>
+	<object type="box" id="bx6">
+		<property name="longSide">1</property>
+		<property name="shortSide">1</property>
+		<property name="color">green</property>
+	</object>
+</objects>

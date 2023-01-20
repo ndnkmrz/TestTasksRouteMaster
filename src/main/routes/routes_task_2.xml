@@ -1,0 +1,48 @@
+<route autoStartup="false" group="weather" customId="true" id="getCurrentWeather">
+    <description>This route gets current weather for the specified location</description>
+    <from uri="timer:getCurrentWeather?repeatCount=1"/>
+    <doTry>
+        <removeHeaders pattern="*"/>
+        <setProperty propertyName="city">
+            <constant>Berlin</constant>
+        </setProperty>
+        <setHeader headerName="CamelHttpQuery">
+            <simple>q=${exchangeProperty.city}&amp;limit=1&amp;appid={{weather.api.key.encrypted}}</simple>
+        </setHeader>
+        <setHeader headerName="CamelHttpMethod">
+            <constant>GET</constant>
+        </setHeader>
+        <to uri="{{weather.api.url.geo}}"/>
+        <unmarshal>
+            <json library="Jackson"/>
+        </unmarshal>
+        <when>
+            <simple>${body.isEmpty()}</simple>
+            <throwException exceptionType="java.lang.Exception" message="Location of ${exchangeProperty.city} was not found"/>
+        </when>
+        <removeHeaders pattern="*"/>
+        <setHeader headerName="CamelHttpQuery">
+            <simple>?lat=${body[0]['lat']}&amp;lon=${body[0]['lon']}&amp;units=metric&amp;appid={{weather.api.key.encrypted}}</simple>
+        </setHeader>
+        <setHeader headerName="CamelHttpMethod">
+            <constant>GET</constant>
+        </setHeader>
+        <setBody>
+            <simple/>
+        </setBody>
+        <to uri="{{weather.api.url.data}}"/>
+        <unmarshal>
+            <json library="Jackson"/>
+        </unmarshal>
+        <toD uri="velocity:file:{{resources}}/createReport.vm?contentCache=false&amp;allowContextMapAll=true"/>
+        <toD uri="message:RouteMaster?level=info&amp;recipient=admin&amp;subject=Current weather in ${exchangeProperty.city}"/>
+        <doCatch>
+            <exception>java.lang.Exception</exception>
+            <to uri="direct:writeExceptionFile"/>
+            <toD uri="message:RouteMaster?level=error&amp;recipient=admin&amp;subject=Weather request failed"/>
+        </doCatch>
+        <doFinally>
+            <toD uri="controlbus:route?action=stop&amp;routeId=getCurrentWeather&amp;async=true"/>
+        </doFinally>
+    </doTry>
+</route>
